@@ -20,21 +20,30 @@ class Favourite extends StatelessWidget {
               shrinkWrap: true,
               itemCount: RecipeModel.demoRecipe.length,
               itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 12,
-                  ),
-                  child: InkWell(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => RecipeDetails(
-                            recipeModel: RecipeModel.demoRecipe[index],
-                          ),
-                        )),
-                    child: RecipeCard(
-                      recipeModel: RecipeModel.demoRecipe[index],
+                if (RecipeModel.demoRecipe[index].loved) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 12,
+                    ),
+                    child: InkWell(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RecipeDetails(
+                              recipeModel: RecipeModel.demoRecipe[index],
+                            ),
+                          )),
+                      child: RecipeCard(
+                        recipeModel: RecipeModel.demoRecipe[index],
+                      ),
+                    ),
+                  );
+                }
+                return Container(
+                  child: Center(
+                    child: Text(
+                      '',
                     ),
                   ),
                 );
@@ -58,10 +67,11 @@ class RecipeCard extends StatefulWidget {
 }
 
 class _RecipeCardState extends State<RecipeCard> {
-  bool loved = false;
+  bool loved;
   bool saved = false;
   @override
   Widget build(BuildContext context) {
+    loved = RecipeModel.demoRecipe[widget.recipeModel.index].loved;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -152,6 +162,8 @@ class _RecipeCardState extends State<RecipeCard> {
                       onTap: () {
                         setState(() {
                           loved = !loved;
+                          RecipeModel.demoRecipe[widget.recipeModel.index]
+                              .loved = loved;
                         });
                       },
                       child: Icon(

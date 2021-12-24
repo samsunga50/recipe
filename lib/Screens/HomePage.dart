@@ -23,6 +23,11 @@ class _MyHomePageState extends State<MyHomePage> {
               FlutterIcons.home_outline_mco,
               color: Colors.redAccent,
             ),
+            FloatingActionButton(
+              tooltip: 'Add', // used by assistive technologies
+              child: Icon(Icons.add),
+              onPressed: null,
+            ),
             /*Icon(
               FlutterIcons.account_group_outline_mco,
             ),
@@ -81,14 +86,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: TabBarView(
                   children: <Widget>[
                     NewRecipe(),
-                    // Favourite(), to do...
-                    Container(
+                    Favourite(),
+                    /* Container(
                       child: Center(
                         child: Text(
                           'Favourites',
                         ),
                       ),
-                    ),
+                    ), */
                     Container(
                       child: Center(
                         child: Text(

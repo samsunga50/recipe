@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_recipee_app/Favourites.dart';
 import 'package:flutter_recipee_app/NewRecipe.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
@@ -14,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       bottomNavigationBar: Container(
         // color: Colors.grey[300],
-        height: 100,
+        height: 70,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -43,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: [
               SizedBox(
-                height: 40,
+                height: 10,
               ),
               TabBar(
                 isScrollable: true,
@@ -80,10 +81,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: TabBarView(
                   children: <Widget>[
                     NewRecipe(),
+                    // Favourite(), to do...
                     Container(
                       child: Center(
                         child: Text(
-                          'Favourite Section',
+                          'Favourites',
                         ),
                       ),
                     ),

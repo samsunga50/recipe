@@ -8,15 +8,19 @@ class RecipeModel {
   int servings;
   List<String> ingredients = [];
   String imgPath;
-  RecipeModel({
-    @required this.title,
-    @required this.writer,
-    @required this.description,
-    @required this.cookingTime,
-    @required this.servings,
-    @required this.imgPath,
-    @required this.ingredients,
-  });
+  bool loved = false;
+  int index;
+  RecipeModel(
+      {@required this.title,
+      @required this.writer,
+      @required this.description,
+      @required this.cookingTime,
+      @required this.servings,
+      @required this.imgPath,
+      @required this.ingredients,
+      @required this.loved,
+      @required this.index});
+
   static List<RecipeModel> demoRecipe = [
     RecipeModel(
       title: 'Gruyère, Bacon, and Spinach Scrambled Eggs',
@@ -35,6 +39,8 @@ class RecipeModel {
         '2 c. spinach, torn',
         '2 oz. Gruyère cheese, shredded',
       ],
+      loved: false,
+      index: 0,
     ),
     RecipeModel(
       title: 'Classic Omelet and Greens ',
@@ -53,6 +59,8 @@ class RecipeModel {
         '2 c. spinach, torn',
         '2 oz. Gruyère cheese, shredded',
       ],
+      loved: false,
+      index: 1,
     ),
     RecipeModel(
       title: 'Sheet Pan Sausage and Egg Breakfast Bake ',
@@ -71,6 +79,8 @@ class RecipeModel {
         '2 c. spinach, torn',
         '2 oz. Gruyère cheese, shredded',
       ],
+      loved: false,
+      index: 2,
     ),
     RecipeModel(
       title: 'Shakshuka',
@@ -89,6 +99,8 @@ class RecipeModel {
         '2 c. spinach, torn',
         '2 oz. Gruyère cheese, shredded',
       ],
+      loved: false,
+      index: 3,
     ),
   ];
 }

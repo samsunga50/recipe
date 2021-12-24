@@ -1,17 +1,14 @@
+// to do, incomplete
+
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_recipee_app/Screens/RecipeDetails.dart';
 import 'package:flutter_recipee_app/model/RecipeModel.dart';
 
-class NewRecipe extends StatelessWidget {
+class Favourite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: const FloatingActionButton(
-        tooltip: 'Add', // used by assistive technologies
-        child: Icon(Icons.add),
-        onPressed: null,
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -61,11 +58,10 @@ class RecipeCard extends StatefulWidget {
 }
 
 class _RecipeCardState extends State<RecipeCard> {
-  bool loved;
+  bool loved = false;
   bool saved = false;
   @override
   Widget build(BuildContext context) {
-    loved = RecipeModel.demoRecipe[widget.recipeModel.index].loved;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -156,8 +152,6 @@ class _RecipeCardState extends State<RecipeCard> {
                       onTap: () {
                         setState(() {
                           loved = !loved;
-                          RecipeModel.demoRecipe[widget.recipeModel.index]
-                              .loved = loved;
                         });
                       },
                       child: Icon(

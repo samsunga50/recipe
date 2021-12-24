@@ -44,7 +44,7 @@ class RecipeModel {
     ),
     RecipeModel(
       title: 'Classic Omelet and Greens ',
-      writer: "Imran Sefat",
+      writer: "Peter Parker",
       description:
           'Sneak some spinach into your morning meal for a boost of nutrients to start your day off right.',
       cookingTime: 10,
@@ -64,7 +64,7 @@ class RecipeModel {
     ),
     RecipeModel(
       title: 'Sheet Pan Sausage and Egg Breakfast Bake ',
-      writer: "Imran Sefat",
+      writer: "Tony Stark",
       description:
           'A hearty breakfast that easily feeds a family of four, all on one sheet pan? Yes, please.',
       cookingTime: 10,
@@ -84,7 +84,7 @@ class RecipeModel {
     ),
     RecipeModel(
       title: 'Shakshuka',
-      writer: "Imran Sefat",
+      writer: "Natasha Romanoff",
       description:
           'Just wait til you break this one out at the breakfast table: sweet tomatoes, runny yolks, and plenty of toasted bread for dipping.',
       cookingTime: 10,

@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         bottom: false,
         child: DefaultTabController(
-          length: 3,
+          length: 2,
           initialIndex: 0,
           child: Column(
             children: [
@@ -61,9 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   Tab(
                     text: "Favourites".toUpperCase(),
                   ),
-                  Tab(
+                  /*Tab(
                     text: "Categories".toUpperCase(),
-                  ),
+                  ),*/
                 ],
                 labelColor: Colors.orange,
                 indicator: DotIndicator(
@@ -94,13 +94,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                     ), */
-                    Container(
+                    /* Container(
                       child: Center(
                         child: Text(
                           'Categories',
                         ),
                       ),
-                    ),
+                    ), */
                   ],
                 ),
               )

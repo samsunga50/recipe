@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_recipee_app/Favourites.dart';
 import 'package:flutter_recipee_app/NewRecipe.dart';
+import 'package:flutter_recipee_app/createRecipe.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -26,7 +27,13 @@ class _MyHomePageState extends State<MyHomePage> {
             FloatingActionButton(
               tooltip: 'Add', // used by assistive technologies
               child: Icon(Icons.add),
-              onPressed: null,
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => MyCustomForm(),
+                  ),
+                );
+              },
             ),
             /*Icon(
               FlutterIcons.account_group_outline_mco,
